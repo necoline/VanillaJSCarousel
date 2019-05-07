@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <div class="carousel">
+    <div data-carousel-anchor></div>
+    <!-- <div class="carousel">
         <div class="carousel-inner">
           <div class="slide active">
             <div class="container">
@@ -40,9 +41,17 @@
           <li></li>
           <li></li>
         </ol>
-      </div>
+      </div> -->
   </div>
   <script src='index.js'> </script>
+  <script> 
+    carousel.create([
+        'https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+        'https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+        'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
+        'https://images.pexels.com/photos/131723/pexels-photo-131723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+    ])
+  </script>
 </body>
 </html>
   
