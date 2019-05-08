@@ -1,12 +1,12 @@
 
-  .carousel {
+  .Carousel__wrapper {
     position: relative;
     top: 50%;
     width: 50%;
   }
 
   @media only screen and (min-width: 1024px){
-    .carousel {
+    .Carousel__wrapper {
         margin: 5% 25%;
         width: 50%
       }
@@ -14,7 +14,7 @@
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px){
-    .carousel {
+    .Carousel__wrapper {
         margin: 10%;
         width: 80%;
       }
@@ -22,54 +22,54 @@
   }
 
   @media only screen and (min-width: 320px) and (max-width: 758px){
-    .carousel {
+    .Carousel__wrapper {
         width: 100%
       }
     }
 
   
-  .carousel-inner {
+  .Carousel__inner {
     position: relative;
     width: 100%;
     overflow: hidden;
   }
   
-  .carousel-inner > .slide {
+  .Carousel__inner > .Carousel__slide {
     position: relative;
     display: none;
     animation: 0.5s ease-in-out;
   }
   
-  .carousel-inner > .active,
-  .carousel-inner > .next {
+  .Carousel__inner > .Carousel__active,
+  .Carousel__inner > .Carousel__next {
     display: block;
   }
   
-  .carousel-inner > .next {
+  .Carousel__inner > .Carousel__next {
     position: absolute;
     top: 0;
     width: 100%;
   }
   
-  .carousel-inner > .to-left {
+  .Carousel__inner > .Carousel__to-left {
     animation-name: left;
   }
   
-  .carousel-inner > .from-right {
+  .Carousel__inner > .Carousel__from-right {
     animation-name: right;
   }
   
-  .carousel-inner > .to-right {
+  .Carousel__inner > .Carousel__to-right {
     animation-name: right;
     animation-direction: reverse;
   }
   
-  .carousel-inner > .from-left {
+  .Carousel__inner > .Carousel__from-left {
     animation-name: left;
     animation-direction: reverse;
   }
   
-  .container {
+  .Carousel__container {
     margin: 0 auto;
   }
 
@@ -77,7 +77,7 @@
     width: 100%;
   }
   
-  .carousel-control {
+  .Carousel__control {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -86,12 +86,12 @@
     margin: 0 3%;
   }
   
-  .carousel-control.right {
+  .Carousel__control.right {
     right: 0;
     left: auto;
   }
   
-  .carousel-control > .arrow {
+  .Carousel__control > .Carousel__arrow {
     position: absolute;
     z-index: 2;
     top: 50%;
@@ -104,53 +104,18 @@
     transform: translateY(-50%);
   }
   
-  .carousel-control > .arrow:hover {
+  .Carousel__control > .Carousel__arrow:hover {
     opacity: 0.8;
   }
   
-  .carousel-control > .arrow.left {
+  .Carousel__control > .Carousel__arrow.left {
     transform: translateY(-50%) rotate(180deg);
   }
   
-  .carousel-control > .arrow.right {
+  .Carousel__control > .Carousel__arrow.right {
     right: 50%;
   }
   
-  .carousel-indicators {
-    position: absolute;
-    z-index: 5;
-    bottom: 20px;
-    left: 50%;
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
-    transform: translateX(-50%);
-  }
-  
-  .carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
-    border: 1px solid #FFFFFF;
-    border-radius: 10px;
-  }
-  
-  .carousel-indicators li.active {
-    background-color: #FFFFFF;
-  }
-  
-  /* @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  } */
   
   @keyframes left {
     from {
