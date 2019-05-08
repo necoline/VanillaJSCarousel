@@ -1,27 +1,11 @@
+//class name change
+// comment functions
+// <
 
-const carousel = (function () { // autoSlide, possibly add time of slide, slide transitionSpeed.
 
-    function create(imageArray) {
-        const anchor = document.querySelector('[data-carousel-anchor]')
-        const result = imageArray.reduce((accum, currentImage) =>
-            accum.concat(`<div class="slide"><div class="container"><img src="${currentImage}" /></div></div>`), '')
-        
-        anchor.insertAdjacentHTML('beforeend', `<div class="carousel"><div class="carousel-inner">${result}</div><div class="carousel-control left"><div class="arrow left"></div></div><div class="carousel-control right"><div class="arrow right"></div></div></div>` )
+const carousel = (function () {
 
-        document.getElementsByClassName('slide')[0].className = 'slide active'
-
-        document.querySelector('.carousel-control.left').addEventListener('click', function() {
-            if (isEnabled) {
-                previousSlide(currentSlide);
-            }
-        });
-        
-        document.querySelector('.carousel-control.right').addEventListener('click', function() {
-            if (isEnabled) {
-                nextSlide(currentSlide);
-            }
-        });
-
+    function animateSlide() {
         const slides = document.querySelectorAll('.carousel .slide');
         let isEnabled = true;    
         let currentSlide = 0;
@@ -36,6 +20,8 @@ const carousel = (function () { // autoSlide, possibly add time of slide, slide 
             showSlide('from-right');
         }
         
+
+
         function previousSlide(n) {
             hideSlide('to-right');
             changeCurrentSlide(n - 1);
@@ -70,13 +56,38 @@ const carousel = (function () { // autoSlide, possibly add time of slide, slide 
                 isEnabled = true;
             });
         }
+    
+        document.querySelector('.carousel-control.left').addEventListener('click', function() {
+            if (isEnabled) {
+                previousSlide(currentSlide);
+            }
+        });
         
-        }
+        document.querySelector('.carousel-control.right').addEventListener('click', function() {
+            if (isEnabled) {
+                nextSlide(currentSlide);
+            }
+        });
+    }
+    
+    function create(imageArray) {
+        const anchor = document.querySelector('[data-carousel-anchor]')
+        const result = imageArray.reduce((accum, currentImage) =>
+            accum.concat(`<div class="slide"><div class="container"><img src="${currentImage}" /></div></div>`), '')
+        
+        anchor.insertAdjacentHTML('beforeend', `<div class="carousel"><div class="carousel-inner">${result}</div><div class="carousel-control left"><div class="arrow left"></div></div><div class="carousel-control right"><div class="arrow right"></div></div></div>` )
 
+        document.getElementsByClassName('slide')[0].className = 'slide active'
+        
+        animateSlide()
+        
+    }
 
     return {
         create  
     }
 })()
+
+
 
 

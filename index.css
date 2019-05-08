@@ -1,12 +1,32 @@
 
   .carousel {
-    position: absolute;
+    position: relative;
     top: 50%;
-    left: 50%;
-    width: 100%;
-    padding: 90px 0;
-    transform: translate(-50%, -50%);
+    width: 50%;
   }
+
+  @media only screen and (min-width: 1024px){
+    .carousel {
+        margin: 5% 25%;
+        width: 50%
+      }
+    
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px){
+    .carousel {
+        margin: 10%;
+        width: 80%;
+      }
+    
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 758px){
+    .carousel {
+        width: 100%
+      }
+    }
+
   
   .carousel-inner {
     position: relative;
@@ -53,8 +73,8 @@
     margin: 0 auto;
   }
 
-  .slide-img {
-    width: 100%
+  img {
+    width: 100%;
   }
   
   .carousel-control {
