@@ -6,5 +6,8 @@
   "tasks": {},
 
   // These tasks can be run from CodeSandbox. Running one will open a preview in the app.
-  "portTasks": {}
+  "portTasks": {
+    "name": "preview",
+    "command": "index.html"
+  }
 }
